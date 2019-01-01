@@ -20,12 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-
+SECRET_KEY = '_ycab&k(1h^7!su0og4f2!jup9kmmh=769uu!!+ff7zxsxyf4p'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -76,15 +76,17 @@ WSGI_APPLICATION = 'blogwebsite.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
+    'postgresql': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'blogwebsite',
         'USER': 'django',
-    
-
+        'PASSWORD': 'pwordyaezz',
+        'HOST': 'postgres',
+        'PORT': 5432,
     }
 }
 
+DATABASES['default'] = DATABASES['postgresql']
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -124,6 +126,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = os.path.join(BASE_DIR, '/static/')
+
 # Additional locations of static files
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static')),
 
@@ -131,8 +135,3 @@ LOGIN_REDIRECT_URL = 'blog:post_list'
 LOGOUT_REDIRECT_URL = 'blog:post_list'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-try:
-    from .local_settings import *
-except ImportError:
-    raise Exception("A local_settings.py file is required to run this project")
