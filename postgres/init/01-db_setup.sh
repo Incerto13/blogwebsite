@@ -13,4 +13,4 @@ echo "Apply data migrations"
 docker-compose exec web python3 manage.py migrate
 
 # Collect static files in /static/ directory
-docker-compose exec web python3 manage.py collectstatic --noinput
+docker-compose exec web python3 manage.py collectstatic --noinput && chmod 775 -R /static
