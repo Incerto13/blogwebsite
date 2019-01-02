@@ -4,13 +4,15 @@ psql -U postgres -c "CREATE USER django PASSWORD 'pwordyaezz'"
 psql -U postgres -c "CREATE DATABASE blogwebsite OWNER django"
 psql -U postgres -c "GRANT ALL PRIVILEGES ON DATABASE blogwebsite TO django"
 
+### None of this should be here, just for reference ############
+
 # import initial data to database
-echo "Importing initial dbase data"
-docker-compose exec web python3 manage.py loaddata datadump.json
+# echo "Importing initial dbase data"
+# docker-compose exec web python3 manage.py loaddata datadump.json
 
 # Apply data migrations
-echo "Apply data migrations"
-docker-compose exec web python3 manage.py migrate
+# echo "Apply data migrations"
+# docker-compose exec web python3 manage.py migrate
 
 # Collect static files in /static/ directory
-docker-compose exec web python3 manage.py collectstatic --noinput && chmod 775 -R /static
+# docker-compose exec web python3 manage.py collectstatic --noinput && chmod 775 -R /static
