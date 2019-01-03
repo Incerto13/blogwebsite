@@ -4,7 +4,7 @@ psql -U postgres -c "CREATE USER django PASSWORD 'pwordyaezz'"
 psql -U postgres -c "CREATE DATABASE blogwebsite OWNER django"
 psql -U postgres -c "GRANT ALL PRIVILEGES ON DATABASE blogwebsite TO django"
 
-### None of this should be here, just for reference ############
+##### None of this below should be here, just for reference
 
 # import initial data to database
 # echo "Importing initial dbase data"
