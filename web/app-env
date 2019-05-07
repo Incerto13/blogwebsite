@@ -1,0 +1,9 @@
+# environment variable(s) for local development environment
+
+export DJANGO_ENV="development"
+export DJANGO_SECRET_KEY="_ycab&k(1h^7!su0og4f2!jup9kmmh=769uu!!+ff7zxsxyf4p"
+
+export POSTGRES_USER="django"
+export POSTGRES_PASSWORD="pwordyaezz"
+export POSTGRES_DB="blogwebsite"
+export DB_HOST="localhost"

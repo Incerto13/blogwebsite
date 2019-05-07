@@ -113,7 +113,8 @@
                             </a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted">Copyright &copy; Affordable Tax Relief 2018</p>
+                    {% now "Y" as current_year %}
+                    <p class="copyright text-muted">Copyright &copy; Affordable Tax Relief &nbsp{{ current_year }}</p>
                 </div>
             </div>
         </div>

@@ -1,3 +1,7 @@
-blogwebsite/local_settings.py
+app-env
+app.env
+settings_OLD.py
+Junk/
+postgres/data
 
 
